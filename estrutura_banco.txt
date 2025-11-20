@@ -589,4 +589,4 @@ Indicativo de situação da produção produzida:
 
 
 
-faça uma query mysql que - Identificar tendências (ex.: envelhecimento → mais procedimentos cardiológicos e oncológicos).
+faça Glossário de termos e siglas (SUS, UBS, CID, etc).
