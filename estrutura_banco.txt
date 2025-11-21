@@ -1,0 +1,868 @@
+
+=============================
+TABELA: cadgerrs
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - cnes char(7) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - cpf_cnpj char(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - fantasia char(60) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - raz_soci char(85) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - rsoc_man char(60) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - logradou char(40) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - num_end char(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - compleme char(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - bairro char(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - cod_cep char(8) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - telefone char(13) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - fax char(13) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - email char(30) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - regsaude char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - micr_reg char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - distrsan char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - distradm char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - codufmun char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - excluido char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - dataincl date NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - dataexcl date NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - natureza char(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: cbo
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - cbo char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_cbo char(150) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: dimtempo
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - Id smallint unsigned NULL=NO DEFAULT=None EXTRA=auto_increment COMMENT=
+ - di date NULL=NO DEFAULT=None EXTRA= COMMENT=
+ - df date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - mes tinyint NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - mesext varchar(20) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - ano smallint NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - anomes char(6) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - MAExt varchar(10) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - bimestre tinyint NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - bi_inicio date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - bi_fim date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - biex_t varchar(20) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - anobi char(7) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - trimestre tinyint NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - tri_inicio date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - tri_fim date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - triex_t varchar(20) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - anotri char(7) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - semestre tinyint NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - sem_inicio date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - sem_fim date NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - semex_t varchar(20) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+ - anosem char(7) NULL=YES DEFAULT=None EXTRA=STORED GENERATED COMMENT=
+
+ÍNDICES:
+ - PRIMARY (coluna: Id) NON_UNIQUE=0
+ - uq_dimtempo_di (coluna: di) NON_UNIQUE=0
+ - ix_anomes (coluna: anomes) NON_UNIQUE=1
+ - ix_anobi (coluna: anobi) NON_UNIQUE=1
+ - ix_anotri (coluna: anotri) NON_UNIQUE=1
+ - ix_anosem (coluna: anosem) NON_UNIQUE=1
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: pars
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - PA_CODUNI varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_GESTAO varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CONDIC varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFMUN varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_REGCT varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCOUT varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCURG varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPUPS varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TIPPRE varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MN_IND varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJCPF varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJMNT varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJ_CC varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MVM varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CMP varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PROC_ID varchar(30) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPFIN varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SUBFIN varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NIVCPL varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DOCORIG varchar(30) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_AUTORIZ varchar(30) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNSMED varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CBOCOD varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MOTSAI varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_OBITO varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ENCERR varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PERMAN varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ALTA varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TRANSF varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDPRI varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDSEC varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDCAS varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CATEND varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_IDADE int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMIN int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMAX int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLIDADE varchar(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SEXO varchar(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_RACACOR varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MUNPCN varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDPRO int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDAPR int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALPRO decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALAPR decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFDIF varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MNDIF varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DIF_VAL decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_VPA_TOT decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_PA_TOT decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INDICA varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CODOCO varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLQT varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLER varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ETNIA varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CF decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CL decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_INC decimal(15,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SRV_C varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INE varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NAT_JUR varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: pars2412
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - PA_CODUNI varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_GESTAO varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CONDIC varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFMUN varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_REGCT varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCOUT varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCURG varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPUPS varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TIPPRE varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MN_IND char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJCPF varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJMNT varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJ_CC varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MVM varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CMP varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PROC_ID varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPFIN varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SUBFIN varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NIVCPL char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DOCORIG char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_AUTORIZ varchar(15) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNSMED varchar(15) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CBOCOD varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MOTSAI varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_OBITO char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ENCERR char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PERMAN char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ALTA char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TRANSF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDPRI varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDSEC varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDCAS varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CATEND varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_IDADE smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMIN smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMAX smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLIDADE char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SEXO char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_RACACOR varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MUNPCN varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDPRO int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDAPR int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALPRO decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALAPR decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFDIF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MNDIF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DIF_VAL decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_VPA_TOT decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_PA_TOT decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INDICA varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CODOCO varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLQT char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLER char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ETNIA varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CF decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CL decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_INC decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SRV_C varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INE varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NAT_JUR varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: pars2501
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - PA_CODUNI varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_GESTAO varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CONDIC varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFMUN varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_REGCT varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCOUT varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INCURG varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPUPS varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TIPPRE varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MN_IND char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJCPF varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJMNT varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNPJ_CC varchar(14) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MVM varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CMP varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PROC_ID varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TPFIN varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SUBFIN varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NIVCPL char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DOCORIG char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_AUTORIZ varchar(15) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CNSMED varchar(15) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CBOCOD varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MOTSAI varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_OBITO char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ENCERR char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_PERMAN char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ALTA char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_TRANSF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDPRI varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDSEC varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CIDCAS varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CATEND varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_IDADE smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMIN smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - IDADEMAX smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLIDADE char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SEXO char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_RACACOR varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MUNPCN varchar(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDPRO int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_QTDAPR int NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALPRO decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VALAPR decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_UFDIF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_MNDIF char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_DIF_VAL decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_VPA_TOT decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - NU_PA_TOT decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INDICA varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_CODOCO varchar(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLQT char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_FLER char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_ETNIA varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CF decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_CL decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_VL_INC decimal(12,2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_SRV_C varchar(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_INE varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - PA_NAT_JUR varchar(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_divadm
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_divadm char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_dsei
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_dsei char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_macsaud
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_macsaud char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_micibge
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_micibge char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_pndr
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_pndr char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_regmetr
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_regmetr char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_regsaud
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_regsaud char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_municip_terrcid
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_terrcid char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: rl_regsaud_macsaud
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_regsaud char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_macrorr char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: s_cid
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - cd_cod char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - opc char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - cat char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - subcat char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - cd_descr char(50) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - restrsexo char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - campos_rad char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - estadio char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - repete_rad char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_divadmant
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_divadm char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(24) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_dsei
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_dsei char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_sede char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_macsaud
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_macsaud char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(37) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(37) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(37) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_micibge
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_micibge char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(41) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(41) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(21) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_mis
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_mis char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nome_mis char(98) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_munic_i char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_municip
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_municip char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_municdv char(7) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(7) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_tipo char(7) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(48) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(48) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_observ char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_regiao char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_uf char(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_alter char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_alterdv char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - in_capital char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - in_amazleg char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - in_semiar char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - in_frontzn char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - dt_instal char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - dt_extin char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_sucess char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordmap char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_latitud char(19) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_longit char(18) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_altitud char(4) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_area char(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_pndr
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_pndr char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordmap decimal(1,0) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_regiao
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_regiao decimal(1,0) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(19) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(19) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(8) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem decimal(1,0) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_regmetr
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_regmetr char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_tipo char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(24) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_regsaud
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - regsaud char(5) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(55) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(55) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_abrev char(55) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ordem char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_sigtaw
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - ip_cod char(10) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ip_dscr char(150) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_terrcid
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_terrcid char(3) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(42) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_ordmap decimal(1,0) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: tb_uf
+=============================
+
+ENGINE: InnoDB
+COLLATION: utf8mb4_0900_ai_ci
+COMENTÁRIO: 
+
+COLUNAS:
+ - co_uf char(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_sigla char(2) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_status char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nome char(41) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ds_nomepad char(41) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_sucess char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - co_regiao char(8) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - nu_area char(1) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
+
+=============================
+TABELA: vw_fato_ambulatorial
+=============================
+
+ENGINE: None
+COLLATION: None
+COMENTÁRIO: VIEW
+
+COLUNAS:
+ - PA_MVM varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - procedimento char(150) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - municipio char(48) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - total_procedimentos bigint NULL=NO DEFAULT=0 EXTRA= COMMENT=
+ - mesext varchar(20) NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - trimestre tinyint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - semestre tinyint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - ano smallint NULL=YES DEFAULT=None EXTRA= COMMENT=
+ - anomes char(6) NULL=YES DEFAULT=None EXTRA= COMMENT=
+
+ÍNDICES:
+
+CHAVES ESTRANGEIRAS:
+ (NENHUMA)
+
+
